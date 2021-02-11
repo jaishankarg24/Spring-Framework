@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd" >
+
+	<beans>
+		<!-- configuring the bean component called Employee -->
+		<bean id='employee' class='com.abc.beans.Employee'>
+			<property name="eid" value='IND10' />
+			<property name="ename" value='sachin' />
+			<property name="eage" value='25' />
+			<property name="address" ref='address' />
+		</bean>
+		<!-- configuring the bean component called address -->
+		<bean id='address' class='com.abc.beans.Address'>
+			<property name="pno" value='colony' />
+			<property name="street" value='abc' />
+			<property name="city" value='mumbai' />
+			<property name="state" value='Maharastra' />
+		</bean>
+	</beans>				
+
+						
+</beans>
