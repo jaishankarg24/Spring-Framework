@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- configuring the bean component called account -->
+
+	<bean id='account' class='com.abc.beans.Account'>
+
+		<property name="accNo" value='abc0001' />
+		<property name="accType" value='savings' />
+		<property name="accName" value='dhoni' />
+		<property name="balance" value='456789' />
+
+	</bean>
+
+	<!-- configuring the bean component called address -->
+
+	<bean id='address1' class='com.abc.beans.Address'>
+		<property name="pno" value='12/2ndMain' />
+		<property name="street" value='MG-ROAD' />
+		<property name="city" value='ranchi' />
+		<property name="state" value='Jharkand' />
+
+	</bean>
+
+
+
+	<!-- Configuring the bean component called employee -->
+	<bean id='employee' class='com.abc.beans.Employee'
+		autowire="constructor">
+
+		<constructor-arg index="0" value="IND07" />
+		<constructor-arg index="1" value="DHONI" />
+		<constructor-arg index="2" value="CSK" />
+
+		<!-- Injecting through constructor(account,address) -->
+
+	</bean>
+
+
+</beans>

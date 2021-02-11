@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config></context:annotation-config>
+
+	<!-- Bean configuration of Course Object -->
+	<bean id="core_java" class='com.abc.beans.Course'>
+
+		<!-- Injecting through setter -->
+		<property name="cid" value="c-111" />
+		<property name="cname" value="COREJAVA" />
+		<property name="cost" value="1000" />
+
+	</bean>
+	
+	<!-- Bean configuration of Course Object -->
+	<bean id="advance_java" class='com.abc.beans.Course'>
+
+		<!-- Injecting through setter -->
+		<property name="cid" value="c-112" />
+		<property name="cname" value="AdvanceJAVA" />
+		<property name="cost" value="1000" />
+
+	</bean>
+
+	<!-- Bean configuration of Student Object -->
+	<bean id='student' class='com.abc.beans.Student'>
+			<!-- Injecting through Constructor -->
+			<constructor-arg value="abc010"/>
+			<constructor-arg value="sachin"/>
+			<constructor-arg value="mumbai"/>
+	</bean>
+
+
+</beans>
