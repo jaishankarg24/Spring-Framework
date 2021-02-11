@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- configuring the bean component called account -->
+
+	<bean id='i18n' class='com.abc.beans.I18N'>
+		<property name="messageSource" ref='messageSource' />
+	</bean>
+
+	<!-- Creating a bean of type ResourceBundleMessageSource and inject PropertiesFile -->
+	<bean id='messageSource'
+		class='org.springframework.context.support.ResourceBundleMessageSource'>
+		<property name="basename" value='com/abc/resources/abc' />
+
+	</bean>
+
+</beans>

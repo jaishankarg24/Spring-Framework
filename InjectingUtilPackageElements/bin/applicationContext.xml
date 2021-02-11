@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="address" class="com.abc.beans.Address">
+		<!-- collaborators and configuration for this bean go here -->
+		<property name="pno" value="10/12thStreet" />
+		<property name="city" value="Bengaluru" />
+		<property name="state" value="Karnataka" />
+		<property name="country" value="IND" />
+	</bean>
+
+	<bean id="student" class="com.abc.beans.Student">
+		<!-- collaborators and configuration for this bean go here -->
+
+		<property name="sid" value="abc19" />
+		<property name="sname" value="dravid" />
+
+
+		<!-- Injecting through Setter Injection -->
+		<property name="address">
+			<ref bean="address" />
+		</property>
+
+		<!-- Injecting a list type Object -->
+		<property name="squal">
+
+			<list>
+				<value>B.E</value>
+				<value>MTECH</value>
+				<value>PHD</value>
+
+			</list>
+
+		</property>
+
+		<!-- Injecting a Set type Object -->
+		<property name="courses">
+			<set>
+				<value>JAVA</value>
+				<value>J2EE</value>
+				<value>FRAMEWORKS</value>
+			</set>
+		</property>
+		
+		
+
+		<!-- Injecting a Map type Object -->
+		<property name="course_and_trainer">
+			<map>
+				<entry key="JAVA" value="ShivPrasad" />
+				<entry key="J2EE" value="Imraz" />
+				<entry key="FRAMEWORKS" value="Yuvraj" />
+			</map>
+		</property>
+
+		<!-- Injecting a Properties type Object -->
+		<property name="course_and_cost">
+			<props>
+				<prop key="JAVA">1000</prop>
+				<prop key="J2EE">1500</prop>
+				<prop key="FRAMEWORKS">2000</prop>
+			</props>
+
+		</property>
+
+
+	</bean>
+
+
+</beans>
