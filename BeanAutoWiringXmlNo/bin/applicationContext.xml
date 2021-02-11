@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Bean configuration through AUTOWIRING mode -->
+
+	<bean id='account' class='com.abc.beans.Account'>
+
+		<property name="accNo" value='abc0001' />
+		<property name="accType" value='savings' />
+		<property name="accName" value='dhoni' />
+		<property name="balance" value='456789' />
+
+	</bean>
+
+
+	<bean id='address' class='com.abc.beans.Address'>
+		<property name="pno" value='12/2ndMain' />
+		<property name="street" value='MG-ROAD' />
+		<property name="city" value='ranchi' />
+		<property name="state" value='Jharkand' />
+
+	</bean>
+
+
+
+	<bean id='employee' class='com.abc.beans.Employee' autowire="no">
+		<property name="eid" value="IND07" />
+		<property name="ename" value="DHONI" />
+		<property name="companyName" value="BCCI" />
+
+
+		<!-- Explicit Collaboration or Explicit AUTOWIRING -->
+		
+		<property name="account" ref='account' />
+
+		<property name="address">
+			<ref bean='address' />
+		</property>
+
+
+	</bean>
+
+
+
+
+
+
+
+</beans>
