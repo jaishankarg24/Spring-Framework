@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Bean configuration should be done here -->
+
+	<bean id='student' class='com.abc.beans.Student'>
+
+		<!-- Constructor Injection -->
+		<constructor-arg value="PAK10" />
+		<constructor-arg value="AFRIDI" />
+		<constructor-arg value="Peshawar" />
+		<constructor-arg value="PAKISTAN" />
+
+		<!-- Setter Injection -->
+		<property name="sid" value="IND10" />
+		<property name="sname" value="SACHIN" />
+		<property name="saddress" value="Mumbai" />
+		<property name="country" value="INDIA" />
+
+
+	</bean>
+
+
+</beans>
